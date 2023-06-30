@@ -65,3 +65,23 @@ let myChart = new Chart(wheel, {
       },
     },
   });
+
+
+  // display value based on the randomAngle
+const valueGenerator = (angleValue) => {
+    for (let i of rotationValues) {
+      // if the angleValue is between min and max then display it
+      if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
+        valueArray.push(i.value); // Add the new value to the array
+        spinBtn.disabled = false;
+        spinBtn.innerHTML = `<img id="spin-btn" class="try-again" src="./icon/refresh-button.png" alt="try-again"/>`;
+      //   maxScore.innerHTML = `${Math.max(...valueArray)}`;
+        finalValue.innerHTML = `<p>Value: ${
+          i.value
+        }</p> <p>Max Score : ${Math.max(...valueArray)}</p>`;
+        console.log(valueArray);
+        console.log(Math.max(...valueArray));
+        break;
+      }
+    }
+  };
