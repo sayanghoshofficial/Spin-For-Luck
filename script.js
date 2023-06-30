@@ -28,3 +28,40 @@ var pieColors = [
     "#2a52be",
     "#041E42",
   ];
+
+  //Create chart
+let myChart = new Chart(wheel, {
+    //Plugin for displaying text on pie chart
+    plugins: [ChartDataLabels],
+    //Chart Type Pie
+    type: "pie",
+    data: {
+      //Labels(values which are to be displayed on chart)
+      labels: [1, 2, 3, 4, 5, 6],
+      //Settings for dataset/pie
+      datasets: [
+        {
+          backgroundColor: pieColors,
+          data: data,
+        },
+      ],
+    },
+    options: {
+      //Responsive chart
+      responsive: true,
+      animation: { duration: 0 },
+      plugins: {
+        //hide tooltip and legend
+        tooltip: false,
+        legend: {
+          display: false,
+        },
+        //display labels inside pie chart
+        datalabels: {
+          color: "#ffffff",
+          formatter: (_, context) => context.chart.data.labels[context.dataIndex],
+          font: { size: 24 },
+        },
+      },
+    },
+  });
