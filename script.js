@@ -18,3 +18,13 @@ const rotationValues = [
 
   //Size of each piece
 const data = [16, 16, 16, 16, 16, 16];
+
+//background color for each piece
+var pieColors = [
+    "#0039a6",
+    "#13274F",
+    "#3457D5",
+    "#002D62",
+    "#2a52be",
+    "#041E42",
+  ];
