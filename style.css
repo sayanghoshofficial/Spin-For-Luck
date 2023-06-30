@@ -40,3 +40,8 @@
     top: 0;
     padding: 0;
   }
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
