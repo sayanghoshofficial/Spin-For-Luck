@@ -77,8 +77,6 @@ const valueGenerator = (angleValue) => {
       spinBtn.innerHTML = `<img id="spin-btn" class="try-again" src="./icon/refresh-button.png" alt="try-again"/>`;
       maxScore.innerHTML = `${Math.max(...valueArray)}`;
       finalValue.innerHTML = `<p>Value: ${i.value}</p> `;
-      console.log(valueArray);
-      console.log(Math.max(...valueArray));
       break;
     }
   }
@@ -118,27 +116,25 @@ spinBtn.addEventListener("click", () => {
   }, 10);
 });
 
-
 function myFunction() {
-    var popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
-  
-    scoreBoard.innerHTML = ""; // Clear existing content in the scoreBoard element
-  
-    valueArray.forEach((score, index) => {
-      const listItem = document.createElement("li");
-      const ordinalNumber = getOrdinalNumber(index + 1);
-      listItem.textContent = `${ordinalNumber} score: ${score}`;
-      scoreBoard.appendChild(listItem);
-    });
-  }
-  
-  // Function to get ordinal number suffix
-  function getOrdinalNumber(number) {
-    const suffixes = ["th", "st", "nd", "rd"];
-    const remainder = number % 100;
-    const suffix = suffixes[(remainder - 20) % 10] || suffixes[remainder] || suffixes[0];
-    return `${number}${suffix}`;
-  }
-  
-  
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+
+  scoreBoard.innerHTML = ""; // Clear existing content in the scoreBoard element
+
+  valueArray.forEach((score, index) => {
+    const listItem = document.createElement("li");
+    const ordinalNumber = getOrdinalNumber(index + 1);
+    listItem.textContent = `${ordinalNumber} score: ${score}`;
+    scoreBoard.appendChild(listItem);
+  });
+}
+
+// Function to get ordinal number suffix
+function getOrdinalNumber(number) {
+  const suffixes = ["th", "st", "nd", "rd"];
+  const remainder = number % 100;
+  const suffix =
+    suffixes[(remainder - 20) % 10] || suffixes[remainder] || suffixes[0];
+  return `${number}${suffix}`;
+}
