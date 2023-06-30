@@ -15,3 +15,6 @@ const rotationValues = [
     { minDegree: 271, maxDegree: 330, value: 3 },
     { minDegree: 331, maxDegree: 360, value: 2 },
   ];
+
+  //Size of each piece
+const data = [16, 16, 16, 16, 16, 16];
